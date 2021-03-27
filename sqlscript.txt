@@ -1,0 +1,27 @@
+
+create table customer_data
+(
+	Name varchar(255) not null primary key,
+	Cust_I varchar(18) not null,
+	Open_Dt char(8) not null,
+	Consult_Dt char(8),
+	VAC_ID CHAR(5),
+	DR_Name CHAR(255),
+	State char(5),
+	Country CHAR(5),
+	DOB char(8),
+	FLAG CHAR(1)
+);
+
+BULK INSERT customer_data
+FROM 'H:\incubyte\inputfiles\cust_data1.txt'
+WITH
+(
+	FIRSTROW=2,
+    FIELDTERMINATOR = '|',
+    ROWTERMINATOR = '\n'
+
+)
+GO
+
+
